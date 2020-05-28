@@ -1,0 +1,24 @@
+{% extends 'frontend/base.html' %}
+{% load static%}
+
+{% block body %}
+<h2>To Do List</h2>
+<div>
+	<div>
+		<input type="text" id="new-task-input" placeholder="Add your task">
+		<button id="new-task-btn">Add</button>
+	</div>
+	<div>
+		<table id="tasks-list">
+			<tbody>
+				
+			</tbody>
+		</table>
+		
+	</div>
+
+</div>
+
+<script type="text/javascript" src="{% static 'frontend/js/todo.js' %}"></script>
+{% endblock body %}
+
