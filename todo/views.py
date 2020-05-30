@@ -39,10 +39,13 @@ def TodoCreate(request):
 		serializer.save()
 	return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def TodoUpdate(request,pk):
 	task=Task.objects.get(id=pk)
+	print(pk)
+	print('------------------------------------->',task)
 	serializer=TaskSerializer(instance=task,data=request.data)
+	print('!!!!!!!!!!!!!!!!!!!!-->',request.data)
 	if serializer.is_valid():
 		serializer.save()
 	return Response(serializer.data)
